@@ -286,40 +286,25 @@ let
     text = ''
       #!${pkgs.evalPackages.runtimeShell}
       case "$*" in
-        --version)
+        --version*)
           cat ${dummy-ghc-data}/ghc/version
           ;;
-        "--version -Wwarn")
-          cat ${dummy-ghc-data}/ghc/version
-          ;;
-        --numeric-version)
+        --numeric-version*)
           cat ${dummy-ghc-data}/ghc/numeric-version
           ;;
-        "--numeric-version -Wwarn")
+        --numeric-version*)
           cat ${dummy-ghc-data}/ghc/numeric-version
           ;;
         --supported-languages)
           cat ${dummy-ghc-data}/ghc/supported-languages
           ;;
-        "--supported-languages -Wwarn")
-          cat ${dummy-ghc-data}/ghc/supported-languages
-          ;;
-        --print-global-package-db)
+        --print-global-package-db*)
           echo "$out/dumby-db"
           ;;
-        "--print-global-package-db -Wwarn")
-          echo "$out/dumby-db"
-          ;;
-        --info)
+        --info*)
           cat ${dummy-ghc-data}/ghc/info
           ;;
-        "--info -Wwarn")
-          cat ${dummy-ghc-data}/ghc/info
-          ;;
-        --print-libdir)
-          echo ${dummy-ghc-data}/ghc/libdir
-          ;;
-        "--print-libdir -Wwarn")
+        --print-libdir*)
           echo ${dummy-ghc-data}/ghc/libdir
           ;;
         *)
@@ -339,7 +324,7 @@ let
     text = ''
       #!${pkgs.evalPackages.runtimeShell}
       case "$*" in
-        --version)
+        --version*)
           cat ${dummy-ghc-data}/ghc-pkg/version
           ;;
         'dump --global -v0')
